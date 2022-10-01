@@ -65,6 +65,7 @@ def gradient_descent_visualization(
         grid_losses, grid_w0, grid_w1, mean_x, std_x, height, weight)
 
     ws_to_be_plotted = np.stack(gradient_ws)
+    
     if n_iter is not None:
         ws_to_be_plotted = ws_to_be_plotted[:n_iter]
 

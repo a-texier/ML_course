@@ -19,6 +19,10 @@ def compute_loss(y, tx, w):
     """
     # ***************************************************
     # INSERT YOUR CODE HERE
+    e = y - np.dot(tx,w)
+    N = y.shape[0]
+    return 1/(2*N) * np.dot(e.T,e)
     # TODO: compute loss by MSE
     # ***************************************************
     raise NotImplementedError
+    
