@@ -4,25 +4,21 @@
 import numpy as np
 
 
+def calculate_mse(e):
+    """Calculate the mse for vector e."""
+    return 1/2*np.mean(e**2)
+
+
+def calculate_mae(e):
+    """Calculate the mae for vector e."""
+    return np.mean(np.abs(e))
 
 
 def compute_loss(y, tx, w):
-    """Calculate the loss using either MSE or MAE.
+    """Calculate the loss.
 
-    Args:
-        y: shape=(N, )
-        tx: shape=(N,2)
-        w: shape=(2,). The vector of model parameters.
-
-    Returns:
-        the value of the loss (a scalar), corresponding to the input parameters w.
+    You can calculate the loss using mse or mae.
     """
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    e = y - np.dot(tx,w)
-    N = y.shape[0]
-    return 1/(2*N) * np.dot(e.T,e)
-    # TODO: compute loss by MSE
-    # ***************************************************
-    raise NotImplementedError
-    
+    e = y - tx.dot(w)
+    return calculate_mse(e)
+    # return calculate_mae(e)
