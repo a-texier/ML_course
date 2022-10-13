@@ -17,11 +17,10 @@ def build_poly(x, degree):
     >>> build_poly(np.array([0.0, 1.5]), 2)
     array([[1.  , 0.  , 0.  ],
            [1.  , 1.5 , 2.25]])
-    """    
-    # ***************************************************
-    # COPY YOUR CODE FROM EX03 HERE
-    # polynomial basis function: TODO
-    # this function should return the matrix formed
-    # by applying the polynomial basis to the input data
-    # ***************************************************
-    raise NotImplementedError
+    """
+    poly = x**0
+    
+    for i in range(1,degree+1):
+       
+        poly = np.c_[poly,x**i]
+    return poly
